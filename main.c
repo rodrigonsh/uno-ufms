@@ -43,7 +43,9 @@ for(int i=0; i <= 9; i++)
 }
 
 // vamos ver se até aqui ta tudo razoável
-for(int i=)
+for(int i=; i <= 9;i++){
+  
+}
   
   
   
