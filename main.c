@@ -12,7 +12,7 @@ int main(){
 
   char cores[4] = {'R', 'G', 'B', 'Y'};
 
-  Carta baralho[108];
+  struct Carta baralho[108];
 
 
 /*
