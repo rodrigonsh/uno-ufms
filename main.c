@@ -2,16 +2,17 @@
 
 #include <stdio.h>
 
-int carta_atual = 0;
+int main(){
+  int carta_atual = 0;
 
-struct Carta{
-  char valor;
-  char cor;
-}
+  struct Carta{
+    char valor;
+    char cor;
+  }
 
-char cores[4] = {'R', 'G', 'B', 'Y'};
+  char cores[4] = {'R', 'G', 'B', 'Y'};
 
-Carta baralho[108]
+  Carta baralho[108]
 
 
 /*
@@ -24,29 +25,31 @@ Carta baralho[108]
 */
 
 // Aqui rola uma geração de deck com todas as cartas
-int cartaAtual = 0;
-for(int i=0; i <= 9; i++)
-{
-  
-  for(int j=0, j<4; j++)
+  int cartaAtual = 0;
+  int i,j;
+  for(i=0; i <= 9; i++)
   {
-    Struct Carta nova = {i+'0', cores[j]};
-    baralho[cartaAtual] = nova;
-    cartaAtual++;
-    
-    if (i > 0)
+
+    for(j=0, j<4; j++)
     {
+      Struct Carta nova = {i+'0', cores[j]};
       baralho[cartaAtual] = nova;
       cartaAtual++;
+
+      if (i > 0)
+      {
+        baralho[cartaAtual] = nova;
+        cartaAtual++
+      }
     }
   }
-}
 
-// vamos ver se até aqui ta tudo razoável
-for(int i=; i <= 9;i++){
-  
+  // vamos ver se até aqui ta tudo razoável
+  for(i=0;i<cartaAtual;i++)
+  {
+    printf("%c %c\n",baralho[i].valor, baralho[i].cor);
+  }
 }
-  
   
   
   
