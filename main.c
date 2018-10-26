@@ -32,7 +32,7 @@ int main(){
 
     for(j=0; j<4; j++)
     {
-      Struct Carta nova = {i+'0', cores[j]};
+      struct Carta nova = {i+'0', cores[j]};
       baralho[cartaAtual] = nova;
       cartaAtual++;
 
