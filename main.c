@@ -8,7 +8,7 @@ int main(){
   struct Carta{
     char valor;
     char cor;
-  }
+  };
 
   char cores[4] = {'R', 'G', 'B', 'Y'};
 
