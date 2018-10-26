@@ -37,7 +37,7 @@ for(int i=0; i <= 9; i++)
     if (i > 0)
     {
       baralho[cartaAtual] = nova;
-      cartaAtual++
+      cartaAtual++;
     }
   }
 }
