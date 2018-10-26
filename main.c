@@ -27,10 +27,10 @@ int main(){
 // Aqui rola uma geração de deck com todas as cartas
   int cartaAtual = 0;
   int i,j;
-  for(i=0; i <= 9; i++)
+  for(i=0; i<= 9; i++)
   {
 
-    for(j=0; j<4; j++)
+    for(j=0;j<4; j++)
     {
       struct Carta nova = {i+'0', cores[j]};
       baralho[cartaAtual] = nova;
