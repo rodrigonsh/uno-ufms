@@ -2,14 +2,22 @@
 
 #include <stdio.h>
 
-char deck[108];
+int carta_atual = 0;
+
+struct Carta{
+  char valor;
+  char cor;
+}
+
+Carta baralho[108]
+
 
 /*
 "5B" // 5 Blue
 "+G" // +2 Green
-"JK" // Joker
+"JW" // Joker
 "IY" // Inversao Yellow
-"J4" // Joker 4 Cartas
+"C4" // Joker 4 Cartas
 "PR" // Pulante (Bloqueio, perde a vez) Red
 */
 
