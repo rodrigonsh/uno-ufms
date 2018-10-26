@@ -7,7 +7,7 @@ char deck[108];
 /*
 "5B" // 5 Blue
 "+G" // +2 Green
-"J" // Joker Red
+"JK" // Joker
 "IY" // Inversao Yellow
 "J4" // Joker 4 Cartas
 "PR" // Pulante (Bloqueio, perde a vez) Red
