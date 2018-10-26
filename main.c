@@ -48,7 +48,7 @@ int main(){
   }
 
   // Criar cartas especiais
-  for(i=0; i<=3; i++)
+  for(i=0; i<3; i++)
   {
     for(j=0;j<4; j++)
       {
