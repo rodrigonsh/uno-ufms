@@ -30,7 +30,7 @@ int main(){
   for(i=0; i <= 9; i++)
   {
 
-    for(j=0, j<4; j++)
+    for(j=0; j<4; j++)
     {
       Struct Carta nova = {i+'0', cores[j]};
       baralho[cartaAtual] = nova;
