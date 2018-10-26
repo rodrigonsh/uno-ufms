@@ -8,11 +8,11 @@ int main(){
   struct Carta{
     char valor;
     char cor;
-  };
+  }
 
   char cores[4] = {'R', 'G', 'B', 'Y'};
 
-  Carta baralho[108]
+  Carta baralho[108];
 
 
 /*
@@ -39,7 +39,7 @@ int main(){
       if (i > 0)
       {
         baralho[cartaAtual] = nova;
-        cartaAtual++
+        cartaAtual++;
       }
     }
   }
