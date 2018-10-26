@@ -5,6 +5,8 @@ Existe uma cor 'vigente'
 Cartas de 0 a 9 
 4 cores: azul, verde, amarelo e vermelho
 
+O otávio está proibido de editar
+
 Cartas especiais:
 0 - Inversora ( Muda a direção do 'loop' )
 1 - Pulante ( O jogador seguinte perde a vez )
@@ -13,3 +15,4 @@ Cartas especiais:
 4:  +4: FAz com que o próximo jogador compre mais 4 cartas e perca a vez
 
 A primeira carta do monte serve para que o jogo comece
+
