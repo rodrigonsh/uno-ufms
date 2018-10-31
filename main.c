@@ -16,8 +16,9 @@ void shuffle(struct Carta array, size_t n)
         size_t i;
         for (i = 0; i <= n - 1; i++) 
         {
+          struct Carta t 
           size_t j = i + rand() / (RAND_MAX / (n - i) + 1);
-          Struct Carta t = array[j];
+          struct Carta t = array[j];
           array[j] = array[i];
           array[i] = t;
         }
