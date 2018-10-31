@@ -2,8 +2,6 @@
 
 #include <stdio.h>
 
-const int size = 108;
-
 int main(){
   int carta_atual = 0;
   
@@ -24,7 +22,7 @@ int main(){
   char cores[4] = {'R', 'G', 'B', 'Y'};
   char especiais[3] = {'I', 'P', '+'};
 
-  struct Carta baralho[size];
+  struct Carta baralho[108];
 
 
 
@@ -52,8 +50,8 @@ int main(){
   // Criar cartas especiais
   for(i=0; i<3; i++)
   {
-    for(j=0;j<4; j++)
-      {
+    for(j=0;j<4; j++) 
+    {
         struct Carta nova = {especiais[i], cores[j]};
 
         baralho[cartaAtual] = nova;
@@ -64,7 +62,16 @@ int main(){
 
       }
   }
-  
+  // Criar coringa
+  for(i=0; i<2; i++) 
+  {
+    for(j=0;j<4; j++) 
+     {
+        struct Carta nova = {coringa[i], cores[j]};
+        baralho[cartaAtual] = nova;
+        cartaAtual++;
+      }
+    }
   // vamos ver se até aqui ta tudo razoável
   for(i=0;i<cartaAtual;i++)
   {
