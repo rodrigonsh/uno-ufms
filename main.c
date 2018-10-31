@@ -1,5 +1,3 @@
-// Este é o código do sevidor
-
 #include <stdio.h>
 #include<stdlib.h>
 
@@ -36,12 +34,13 @@ int main(){
   "IY" // Inversao Yellow
   "C4" // Joker 4 Cartas
   "PR" // Pulante (Bloqueio, perde a vez) Red
-  */
+   "uno"// aviso de uma carta
+   */
 
 
   char cores[4] = {'R', 'G', 'B', 'Y'};
   char especiais[3] = {'I', 'P', '+'};
-  
+  int uno=0;
   struct Carta baralho[size];
 
 // Aqui rola uma geração de deck com todas as cartas
@@ -93,7 +92,6 @@ int main(){
    
   }
   
-  srand(time(NULL));
   shuffle(baralho, 108);
   
   // vamos ver se até aqui ta tudo razoável
@@ -103,14 +101,4 @@ int main(){
   }
   printf("%d\n", cartaAtual);
   
-} // FIM DO MAIN
- 
-
-  
-  
-
-// Aqui rola um shuffle https://stackoverflow.com/questions/6127503/shuffle-array-in-c
-
-// Tem quer os player
-
-// TODO: ter um sevidor aqui https://pt.wikibooks.org/wiki/Programar_em_C/Sockets
+} 
