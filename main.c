@@ -1,23 +1,29 @@
 // Este é o código do sevidor
 
 #include <stdio.h>
+#include<stdlib.h>
 
 const int size = 108;
 
-void shuffle(struct Carta array, size_t n)
+  struct Carta{
+    char valor;
+    char cor;
+  };
+
+
+void shuffle(struct Carta array[], size_t n)
 {
-     if (n > 1) 
+  size_t i;
+  if (n > 1) 
+  {
+    for (i = 0; i <= n - 1; i++) 
     {
-        size_t i;
-        for (i = 0; i <= n - 1; i++) 
-        {
-          struct Carta t ;
-          size_t j = i + rand() / (RAND_MAX / (n - i) + 1);
-          t = array[j];
-          array[j] = array[i];
-          array[i] = t;
-        }
+      size_t j = i + rand() / (RAND_MAX / (n - i) + 1);
+      struct Carta t = array[j];
+      array[j] = array[i];
+      array[i] = t;
     }
+  }
 }
 
 int main(){
@@ -32,10 +38,6 @@ int main(){
   "PR" // Pulante (Bloqueio, perde a vez) Red
   */
 
-  struct Carta{
-    char valor;
-    char cor;
-  };
 
   char cores[4] = {'R', 'G', 'B', 'Y'};
   char especiais[3] = {'I', 'P', '+'};
@@ -91,7 +93,7 @@ int main(){
    
   }
   
-  shuffle(baralho), 108;
+  shuffle(baralho, 108);
   
   // vamos ver se até aqui ta tudo razoável
   for(i=0;i<cartaAtual;i++)
