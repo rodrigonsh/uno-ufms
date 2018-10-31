@@ -14,3 +14,5 @@ Cartas especiais:
 
 A primeira carta do monte serve para que o jogo comece
 
+PDF com a regras padroes para caso haja duvidas
+http://copag.com.br/wp-content/uploads/2016/03/UNO.pdf
