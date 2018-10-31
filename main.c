@@ -90,7 +90,7 @@ int main(){
    
   }
   
-  shuffle(baralho, 108;
+  shuffle(baralho,108);
   
   // vamos ver se até aqui ta tudo razoável
   for(i=0;i<cartaAtual;i++)
