@@ -7,7 +7,13 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
+/*
+   esse codigo precisa que a porta que o servidor vai ficar seja passa por agumento para ele
+   exemplo de como executar no linux/
+   
+   ./server 8080
 
+*/
 void error(char *msg)
 {
     perror(msg);
