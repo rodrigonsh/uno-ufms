@@ -2,6 +2,8 @@
 
 #include <stdio.h>
 
+const int size = 108;
+
 int main(){
   int carta_atual = 0;
   
@@ -23,7 +25,7 @@ int main(){
   char especiais[3] = {'I', 'P', '+'};
   char coringa[2] = {'J', 'C'};
 
-  struct Carta baralho[108];
+  struct Carta baralho[size];
 
 
 
