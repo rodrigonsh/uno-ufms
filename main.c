@@ -93,6 +93,7 @@ int main(){
    
   }
   
+  srand(time(NULL));
   shuffle(baralho, 108);
   
   // vamos ver se até aqui ta tudo razoável
