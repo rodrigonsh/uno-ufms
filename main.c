@@ -4,6 +4,11 @@
 
 const int size = 108;
 
+ struct Carta{
+   char valor;
+   char cor;
+ };
+
 void shuffle(Struct Carta array, size_t n)
 {
     if (n > 1) 
@@ -30,11 +35,6 @@ int main(){
   "C4" // Joker 4 Cartas
   "PR" // Pulante (Bloqueio, perde a vez) Red
   */
-
-  struct Carta{
-    char valor;
-    char cor;
-  };
 
   char cores[4] = {'R', 'G', 'B', 'Y'};
   char especiais[3] = {'I', 'P', '+'};
