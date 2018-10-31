@@ -2,11 +2,10 @@
    The port number is passed as an argument */
 #include <stdio.h>
 #include <stdlib.h>
-#include <strings.h>
 #include <sys/types.h> 
 #include <sys/socket.h>
 #include <netinet/in.h>
-#include <unistd.h>
+#include <strings.h>
 
 void error(char *msg)
 {
@@ -20,7 +19,6 @@ int main(int argc, char *argv[])
      char buffer[256];
      struct sockaddr_in serv_addr, cli_addr;
      int n;
-     
      if (argc < 2) {
          fprintf(stderr,"ERROR, no port provided\n");
          exit(1);
