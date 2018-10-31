@@ -23,12 +23,8 @@ int main(){
 
   char cores[4] = {'R', 'G', 'B', 'Y'};
   char especiais[3] = {'I', 'P', '+'};
-  char coringa[2] = {'J', 'C'};
-
+  
   struct Carta baralho[size];
-
-
-
 
 // Aqui rola uma geração de deck com todas as cartas
   int cartaAtual = 0;
@@ -66,15 +62,18 @@ int main(){
       }
   }
   // Criar coringa
-  for(i=0; i<2; i++) 
-  {
-    for(j=0;j<4; j++) 
-     {
-        struct Carta nova = {coringa[i], cores[j]};
-        baralho[cartaAtual] = nova;
-        cartaAtual++;
-      }
-    }
+ for(j=0;j<4; j++) 
+ {
+    struct Carta coringa4 = {'C', '4'};
+    struct Carta joker = {'J', 'W'};
+   
+    baralho[cartaAtual] = coringa4;
+    cartaAtual++;
+   
+    baralho[cartaAtual] = joker;
+    cartaAtual++;
+   
+  }
   // vamos ver se até aqui ta tudo razoável
   for(i=0;i<cartaAtual;i++)
   {
