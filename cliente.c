@@ -7,7 +7,11 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <netdb.h>
+/*
+    esse codigo precisa que os parametros sejam passados por argumentos
+    exemplo de como executar em linux// ./client 127.0.0.1 8080
 
+*/
 void error(char *msg)
 {
     perror(msg);
