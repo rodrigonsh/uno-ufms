@@ -4,6 +4,21 @@
 
 const int size = 108;
 
+void shuffle(Struct Carta array, size_t n)
+{
+    if (n > 1) 
+    {
+        size_t i;
+        for (i = 0; i < n - 1; i++) 
+        {
+          size_t j = i + rand() / (RAND_MAX / (n - i) + 1);
+          Struct Carta t = array[j];
+          array[j] = array[i];
+          array[i] = t;
+        }
+    }
+}
+
 int main(){
   int carta_atual = 0;
   
@@ -74,6 +89,9 @@ int main(){
     cartaAtual++;
    
   }
+  
+  shuffle(baralho, 108;
+  
   // vamos ver se até aqui ta tudo razoável
   for(i=0;i<cartaAtual;i++)
   {
