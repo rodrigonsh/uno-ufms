@@ -100,7 +100,7 @@ int main(){
     printf("%c %c\n",baralho[i].valor, baralho[i].cor);
   }
   printf("%d\n", cartaAtual);
-  
+  return 0;
 } 
 
 
