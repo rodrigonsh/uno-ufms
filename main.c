@@ -9,7 +9,7 @@ const int size = 108;
    char cor;
  };
 
-void shuffle(Struct Carta array, size_t n)
+void shuffle(struct Carta array, size_t n)
 {
     if (n > 1) 
     {
