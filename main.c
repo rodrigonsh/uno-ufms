@@ -21,6 +21,7 @@ int main(){
 
   char cores[4] = {'R', 'G', 'B', 'Y'};
   char especiais[3] = {'I', 'P', '+'};
+  char coringa[2] = {'J', 'C'};
 
   struct Carta baralho[108];
 
