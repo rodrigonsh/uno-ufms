@@ -8,6 +8,9 @@
 #include <netinet/in.h>
 #include <unistd.h>
 /*
+   Algumas bibliotecas usadas nesse programa são POSIX  e podem e não estão previamente instaladas em sistemas não linux
+   podendo ser obtidas em https://www.gnu.org/software/libc/
+/*
    esse codigo precisa que a porta que o servidor vai ficar seja passa por agumento para ele
    exemplo de como executar no linux/
    
