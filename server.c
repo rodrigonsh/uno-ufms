@@ -8,8 +8,8 @@
 #include <netinet/in.h>
 #include <unistd.h>
 /*
-   Algumas bibliotecas usadas nesse programa são POSIX  e podem e não estão previamente instaladas em sistemas não linux
-   podendo ser obtidas em https://www.gnu.org/software/libc/
+   Esse programa usa funções unix ou seja só funcionam e sistemas Unix como linux
+   para compilar em windows susbistituir sys/socket.h  e netinet/in.h por seus equivalentes de winsock2.h
 /*
    esse codigo precisa que a porta que o servidor vai ficar seja passa por agumento para ele
    exemplo de como executar no linux/
