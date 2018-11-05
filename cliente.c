@@ -8,6 +8,10 @@
 #include <unistd.h>
 #include <netdb.h>
 /*
+   Esse programa usa funções unix ou seja só funcionam e sistemas Unix como linux
+   para compilar em windows susbistituir sys/socket.h  e netinet/in.h por seus equivalentes de winsock2.h
+/*
+/*
     esse codigo precisa que os parametros sejam passados por argumentos
     exemplo de como executar em linux// ./client 127.0.0.1 8080
 
