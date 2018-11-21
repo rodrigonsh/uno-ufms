@@ -1,0 +1,78 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define TAMFILA 5
+int Ini = 0,QtdElem =0;
+int Fila[5];
+
+int menu(){
+	
+int op;
+
+system("cls");
+printf("****************\n");
+printf("* 0 - Sair     *\n");
+printf("*               \n");
+printf("* 1 - Inserir  *\n");
+printf("*               \n");
+printf("* 2 - Remover  *\n");
+printf("****************\n");
+printf("\nEscolha uma alternativa ->");
+
+scanf("%d",&op);
+
+
+return op;
+}
+
+int inserir(){
+	int Valor,Pos;
+	if(QtdElem <5){
+		Pos = (Ini +QtdElem);
+		Pos= Pos%5;
+		printf("\nDigite um valor:");
+		scanf("%d",&Valor);
+		Fila[Pos]=Valor;
+		printf("Colocou %2d na posição %d \n",Fila[Pos],Pos);
+		QtdElem++;
+		return 0 ;
+	}
+	printf("Fila cheia!!! \n");
+	return 0;
+}
+
+int remover(){
+
+if(QtdElem > 0){
+	int Valor = Fila[Ini];
+	printf("Removeu %2d da posição %d\n",Fila[Ini],Ini);
+	Ini++;
+	Ini = Ini%5;
+		QtdElem--;
+		return(Valor);
+	}
+	printf("Fila vazia!!\n");
+	return(0);
+	}
+
+
+int main(){
+	int op;
+	while(op= menu()){
+		switch(op){
+			case 1: inserir();
+			break;
+			case 2: remover();
+			break;
+			default: printf("\nOpção inválida!");
+			break;
+		}
+		getch();
+	}
+	return 0;
+}
+	
+
+
+
+
