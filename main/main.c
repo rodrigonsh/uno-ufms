@@ -28,7 +28,7 @@ int main(int argc, char const *argv[])
 	printf("Quantos jogadores ?");
 	scanf("%d", &n_jogadores);
   	topo = size - 1;
-	distribui_cartas(baralho, topo, jogadores, n_jogadores);
+	topo = distribui_cartas(baralho, topo, jogadores, &n_jogadores);
 	for(i = 0; i < n_jogadores; i++)
 	{
 		printf("Jogador n %d\n", jogadores[i].ind_jogador);

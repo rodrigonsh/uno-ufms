@@ -58,6 +58,7 @@ void gera_deck(struct Carta baralho[], int size)
     }
 }
 
+
 void mostra_deck(struct Carta baralho[], int size)
 {
     int i;
@@ -73,27 +74,24 @@ void mostra_deck(struct Carta baralho[], int size)
 int distribui_cartas(struct Carta baralho[], int topo, struct Jogador jogadores[], int n_jogadores)
 {
 	int i, j;
-	do{
-		if(n_jogadores < 2 || n_jogadores > 10)
-		{
-			printf("Erro redefina o numero de jogadores !!!\n");
-			scanf("%d", &n_jogadores);
-		}
-	}while(n_jogadores < 2 || n_jogadores > 10);
+	if(n_jogadores < 2 || n_jogadores > 10)
+    {
+        printf("Numero invalido de jogadores !!!!");
+        exit(EXIT_FAILURE);
+    }
 
-	for(j = 0; j < n_jogadores; j++)
+    for(j = 0; j < n_jogadores; j++)
 		{
 			jogadores[j].n_cartas = 0;
 			jogadores[j].ind_jogador = j+1;
 		}
 
 	for(i = 0; i < 7; i++)
-	{
 		for(j = 0; j < n_jogadores; j++)
 		{
 			jogadores[j].mao[jogadores[j].n_cartas++] = baralho[topo--];
 		}
-	}
+
 	return topo;
 }
 
