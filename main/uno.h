@@ -19,6 +19,13 @@ struct Jogador
  	struct Carta mao[30];
 };
 
+struct pilha
+{
+	int topo;
+	struct carta cartas[108];
+};
+
+
 //Embaralha o deck de cartas
 void shuffle(struct Carta array[], size_t n);
 
@@ -35,9 +42,12 @@ int distribui_cartas(struct Carta baralho[], int topo, struct Jogador jogadores[
 int id_carta(struct Carta carta);
 
 //joga carta
-struct Carta joga_carta(struct Jogador Jogador, int index);
+struct Carta joga_carta(struct Jogador *jogador, int index);
 
 //verifc se a jogada é válida
 int verifica(struct Carta atual, struct Carta carta);
+
+//compra cartas
+void compra(struct Jogador *jogador, struct pilha *baralho, int quant);
 
 #endif
