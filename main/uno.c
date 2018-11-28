@@ -62,11 +62,11 @@ void gera_deck(struct Carta baralho[], int size)
 void mostra_deck(struct Carta baralho[], int size)
 {
     int i;
-    printf("=====\n");
-    for (i = 0; i < size; i++)
+    for (i = 1; i <= size; i++)
     {
-        printf("%c - %c\n", baralho[i].cor, baralho[i].valor);
-        printf("=====\n");
+        printf("(%c - %c [%02d])\t", baralho[i-1].cor, baralho[i-1].valor, i-1);
+        if(i % 3 == 0)
+            printf("\n\n");
     }
 }
 
