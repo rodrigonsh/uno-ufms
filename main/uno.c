@@ -137,8 +137,15 @@ int verifica(struct Carta jogada, struct Carta pilha)
 }
 
 
-
-
+int compra(struct Jogador *jogador, struct Carta baralho[], int topo, int quant)
+{
+	int i;
+	for(i = 0; i < quant; i++)
+	{
+		jogador->mao[jogador->n_cartas++] = baralho[topo--];
+	}
+	return topo;
+}
 
 
 
