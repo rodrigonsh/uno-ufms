@@ -48,6 +48,6 @@ struct Carta joga_carta(struct Jogador *jogador, int index);
 int verifica(struct Carta jogada, struct Carta pilha);
 
 //compra cartas
-void compra(struct Jogador *jogador, struct Pilha *baralho, int quant);
+int compra(struct Jogador *jogador, struct Carta baralho[], int topo, int quant);
 
 #endif
