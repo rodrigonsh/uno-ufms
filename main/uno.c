@@ -96,31 +96,13 @@ int distribui_cartas(struct Carta baralho[], int topo, struct Jogador jogadores[
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+int id_carta(struct Carta carta)
+{   
+    if(carta.cor == 'R'|| carta.cor == 'G'||carta.cor == 'Y'|| carta.cor == 'B')
+        if(isdigit(carta.valor))
+            return 0;
+        else
+            return 1;
+    else
+        return 2;
+}
