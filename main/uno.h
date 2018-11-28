@@ -2,6 +2,7 @@
 #define UNO_H_
 #include <stdlib.h>
 #include <stdio.h>
+#include <ctype.h>
 
 //Definição da estrutura que representa uma carta
 struct Carta
