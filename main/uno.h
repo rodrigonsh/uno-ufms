@@ -34,4 +34,7 @@ int distribui_cartas(struct Carta baralho[], int topo, struct Jogador jogadores[
 //Identifica se acarta tem cor
 int id_carta(struct Carta carta);
 
+//joga carta
+struct Carta joga_carta(struct Jogador Jogador, int index);
+
 #endif
