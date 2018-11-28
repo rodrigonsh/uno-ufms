@@ -37,4 +37,7 @@ int id_carta(struct Carta carta);
 //joga carta
 struct Carta joga_carta(struct Jogador Jogador, int index);
 
+//verifc se a jogada é válida
+int verifica(struct Carta atual, struct Carta carta);
+
 #endif
