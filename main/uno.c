@@ -126,6 +126,15 @@ struct Carta joga_carta(struct Jogador *jogador, int index)
 }
 
 
+int verifica(struct Carta jogada, struct Carta pilha)
+{
+	if(pilha.cor == jogada.cor)
+		return 1;
+	else if(pilha.valor == jogada.valor)
+		return 1;
+	else
+		return 0;
+}
 
 
 
