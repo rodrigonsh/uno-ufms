@@ -106,3 +106,40 @@ int id_carta(struct Carta carta)
     else
         return 2;
 }
+
+
+struct Carta joga_carta(struct Jogador *jogador, int index)
+{
+	struct Carta aux = jogador->mao[index];
+	int i;
+	jogador->n_cartas--;
+	if(index == jogador->n_cartas)
+	{
+		return aux;
+	}
+	else
+	{
+		for(i = index; i < jogador->n_cartas; i++)
+			jogador->mao[i] = jogador->mao[i+1];
+		return aux;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
