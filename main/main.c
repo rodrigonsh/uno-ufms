@@ -31,8 +31,11 @@ int main(int argc, char const *argv[])
 	topo = distribui_cartas(baralho, topo, jogadores, n_jogadores);
 	for(i = 0; i < n_jogadores; i++)
 	{
-		printf("Jogador n %d\n", jogadores[i].ind_jogador);
+		printf("\n\nJogador n %d\n", jogadores[i].ind_jogador);
+		printf("============================================\n");
 		mostra_deck(jogadores[i].mao, jogadores[i].n_cartas);
 	}
+	printf("\n==================BARALHO==================\n");
+	mostra_deck(baralho, topo);
 	return 0;
 }
