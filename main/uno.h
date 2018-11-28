@@ -19,10 +19,10 @@ struct Jogador
  	struct Carta mao[30];
 };
 
-struct pilha
+struct Pilha
 {
 	int topo;
-	struct carta cartas[108];
+	struct Carta cartas[108];
 };
 
 
@@ -45,9 +45,9 @@ int id_carta(struct Carta carta);
 struct Carta joga_carta(struct Jogador *jogador, int index);
 
 //verifc se a jogada é válida
-int verifica(struct Carta atual, struct Carta carta);
+int verifica(struct Carta jogada, struct Carta pilha);
 
 //compra cartas
-void compra(struct Jogador *jogador, struct pilha *baralho, int quant);
+void compra(struct Jogador *jogador, struct Pilha *baralho, int quant);
 
 #endif
