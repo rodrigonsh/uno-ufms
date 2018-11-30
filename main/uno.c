@@ -148,22 +148,16 @@ int compra(struct Jogador *jogador, struct Carta baralho[], int topo, int quant)
 	return topo;
 }
 
-//verifica se a pilha d jogo esta cheia
-int verificarseestacheia (struct Pilha *Pilha){
-
-  if (Pilha->topo == Pilha-> topo-1)
-     return 1;
-  else
-     return 0;
-
+// verifica se a pilha do jogo esta cheia 
+int verificaseestacheia(struct Pilha *Pilha){
+	if (Pilha-> topo==Pilha->topo-1)
+		return 1;
+	else return 0;
 }
-// desempilha a pilha do jogo se ela estiver cheia
 
-float desempilhar (struct Pilha *Pilha, int topo){
-  float aux = Pilha-> topo-1;
-  Pilha->topo--;
-  return topo;
- }
+
+
+
 
 
 
