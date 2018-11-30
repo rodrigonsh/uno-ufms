@@ -23,17 +23,17 @@ struct Pilha
 {
 	int topo;
 	struct Carta cartas[108];
-};// centro do jogo(mesa)
+};
 
 
 //Embaralha o deck de cartas
-void shuffle(struct Carta array[], size_t n);
+void shuffle(struct Pilha *baralho);
 
 // Aqui rola uma geração de deck com todas as cartas
-void gera_deck(struct Carta baralho[], int size);
+void gera_deck(struct Pilha *baralho);
 
 // Aqui mostra todo o deck
-void mostra_deck(struct Carta baralho[], int size);
+void mostra_deck(struct Pilha *baralho);
 
 //distribui as cartas
 int distribui_cartas(struct Carta baralho[], int topo, struct Jogador jogadores[], int n_jogadores); 
@@ -49,6 +49,7 @@ int verifica(struct Carta jogada, struct Carta pilha);
 
 //compra cartas
 int compra(struct Jogador *jogador, struct Carta baralho[], int topo, int quant);
+
 
 //verificar se a pilha da jogo esta cheia
 int verificarseestacheia(struct Pilha*p);
