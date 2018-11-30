@@ -54,6 +54,9 @@ int compra(struct Jogador *jogador, struct Carta baralho[], int topo, int quant)
 //verificar se a pilha da jogo esta cheia
 int verificarseestacheia(struct Pilha*Pilha);
 
+// se estiver cheia desempilha 
+float desempilhar (struct Pilha *Pilha, int topo)
+
 
 
 #endif
