@@ -146,7 +146,7 @@ int compra(struct Jogador *jogador, struct Carta baralho[], int topo, int quant)
 	}
 	return topo;
 }
-
+//embaralha as cartas na pilha quando estiver cheia 
 
 
 
