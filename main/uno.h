@@ -36,7 +36,7 @@ void gera_deck(struct Pilha *baralho);
 void mostra_deck(struct Pilha *baralho);
 
 //distribui as cartas
-int distribui_cartas(struct Carta baralho[], int topo, struct Jogador jogadores[], int n_jogadores); 
+void distribui_cartas(struct Pilha *baralho, struct Jogador jogadores[], int n_jogadores); 
 
 //Identifica se acarta tem cor
 int id_carta(struct Carta carta);
@@ -52,11 +52,12 @@ int compra(struct Jogador *jogador, struct Carta baralho[], int topo, int quant)
 
 
 //verificar se a pilha da jogo esta cheia
-int verificarseestacheia(struct Pilha*Pilha);
+int verificarseestacheia(struct Pilha*p);
 
-// se estiver cheia desempilha 
-float desempilhar (struct Pilha *Pilha, int topo)
+// Se a carta do jogo estiver cheia,desempilha
+void desempilhar(struct Pilha *p);
 
-
-
+//Verifica se o jogador tem um carta x
+int verifica(struct Jogador jogador, struct Carta x);
+ 
 #endif
