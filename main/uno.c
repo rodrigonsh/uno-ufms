@@ -1,37 +1,38 @@
 #include "uno.h"
 
-void shuffle(struct Carta array[], size_t n)
+void shuffle(struct Pilha *baralho)
 {
   size_t i;
-  if (n > 1) 
+  if (baralho->topo > 1) 
   {
-    for (i = 0; i <= n - 1; i++) 
+    for (i = 0; i <= baralho->topo - 1; i++) 
     {
-      size_t j = i + rand() / (RAND_MAX / (n - i) + 1);
-      struct Carta t = array[j];
-      array[j] = array[i];
-      array[i] = t;
+      size_t j = i + rand() / (RAND_MAX / (baralho->topo - i) + 1);
+      struct Carta t = baralho->cartas[j];
+      baralho->cartas[j] = baralho->cartas[i];
+      baralho->cartas[i] = t;
     }
   }
 }
 
 
-void gera_deck(struct Carta baralho[], int size)
+void gera_deck(struct Pilha *baralho)
 {
-	int i, j, carta_atual = 0;
+	int i, j;
+	baralho->topo = 0;
     char cores[4] = {'R', 'G', 'B', 'Y'},especiais[3] = {'I', 'P', '+'};
     //Gera as cartas numéricas
     for (i = 0; i < 10; i++)
         for (j = 0; j < 4; j++)
         {
             struct Carta nova = {i + '0', cores[j]};
-            baralho[carta_atual] = nova;
-            carta_atual++;
+            baralho->cartas[baralho->topo] = nova;
+            ++(baralho->topo);
 
             if(i > 0)
             {
-                baralho[carta_atual] = nova;
-                carta_atual++;   
+                baralho->cartas[baralho->topo] = nova;
+            	++(baralho->topo);  
             }
         }
     //Gera as cartas de ação
@@ -39,32 +40,32 @@ void gera_deck(struct Carta baralho[], int size)
         for (j = 0; j < 4; j++)
         {
             struct Carta nova = {especiais[i], cores[j]};
-            baralho[carta_atual] = nova;
-            carta_atual++;
+            baralho->cartas[baralho->topo] = nova;
+            ++(baralho->topo);  
             
-            baralho[carta_atual] = nova;
-            carta_atual++;
+            baralho->cartas[baralho->topo] = nova;
+            ++(baralho->topo);
         }
     //Gera as cartas coringa e coringa +4
     for (i = 0; i < 4; i++)
     {
-        struct Carta coringa4 = {'C', '4'}, joker = {'J', 'W'};
+        struct Carta coringa4 = {'4', 'C'}, coringa0 = {'0', 'C'};
 
-        baralho[carta_atual] = coringa4;
-        carta_atual++;
+        baralho->cartas[baralho->topo] = coringa4;
+        ++(baralho->topo);
    
-        baralho[carta_atual] = joker;
-        carta_atual++;
+        baralho->cartas[baralho->topo] = coringa0;
+        ++(baralho->topo);
     }
 }
 
 
-void mostra_deck(struct Carta baralho[], int size)
+void mostra_deck(struct Pilha *baralho)
 {
     int i;
-    for (i = 1; i <= size; i++)
+    for (i = 1; i <= baralho->topo; i++)
     {
-        printf("(%c - %c [%02d])\t", baralho[i-1].cor, baralho[i-1].valor, i-1);
+        printf("(%c - %c [%02d])\t", baralho->cartas[i-1].cor, baralho->cartas[i-1].valor, i-1);
         if(i % 3 == 0)
             printf("\n\n");
     }
@@ -148,29 +149,7 @@ int compra(struct Jogador *jogador, struct Carta baralho[], int topo, int quant)
 }
 
 
-//verifica se a pilha d jogo esta cheia 
-int verificarseestacheia ( struct Pilha *p ){ 
-Int capa; 
 
-if (p->topo == p->capa - 1)  
-
-return 1; 
-
-else return 0;  
-
-} 
-// desempilha a pilha do jogo se ela estiver cheia
-
- float desempilhar ( struct Pilha *p ){ 
-
-float  Elem,aux; 
-
-float aux = p->pElem [p->topo];  
-
- p->topo--; 
-
-return aux; 
- }
 
 
 
