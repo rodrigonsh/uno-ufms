@@ -16,7 +16,7 @@ struct Jogador
 	char nick_name[16];
 	int ind_jogador;
 	int n_cartas;
- 	struct Carta mao[30];
+ 	struct Carta mao[102];
 };
 
 struct Pilha
