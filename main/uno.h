@@ -23,7 +23,7 @@ struct Pilha
 {
 	int topo;
 	struct Carta cartas[108];
-};
+};// centro do jogo(mesa)
 
 
 //Embaralha o deck de cartas
