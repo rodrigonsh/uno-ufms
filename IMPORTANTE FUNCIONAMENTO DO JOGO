@@ -1,0 +1,10 @@
+# o jogo sera totalmente processado no servidor sendo toda a parte funcional no mesmo
+# cliete apenas processara as informações recebidas do servidor e as formatara para que sejam xibidas corretamente para o cliente
+# o cliente se comunicara com a servidor por strings
+# as jogadas serão feitas atravez de comandos 
+# quando um jogador estiver na sua vez de jogar
+# a lista com os comandos possiveis sera enviadas para o cliente
+# tambem serão enviados as cartas na mão do jogador, a carta no topo da pilha
+# o sentido atual que o o jogo está e o proximo jogador.
+# tambem serão exibidos para todos os jogadores a sitaução atual do jogo
+# como o numero de cartas que cada jogador tem  junto com seus nomes e qual jogador está jogando atualmente
