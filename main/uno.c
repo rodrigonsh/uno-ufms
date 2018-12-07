@@ -1,5 +1,6 @@
 #include "uno.h"
 
+// embaralha as cartas
 void shuffle(struct Pilha *baralho)
 {
   size_t i;
