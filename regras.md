@@ -12,6 +12,15 @@ Cartas especiais:
 3 - Coringa: Muda a cor vigente
 4:  +4: FAz com que o próximo jogador compre mais 4 cartas e perca a vez
 
+Exemplos
+"5B" // 5 Blue
+"+G" // +2 Green
+"JW" // Joker
+"IY" // Inversao Yellow
+"C4" // Joker 4 Cartas
+"PR" // Pulante (Bloqueio, perde a vez) Red
+"uno"// aviso de uma carta
+
 A primeira carta do monte serve para que o jogo comece
 
 PDF com a regras padroes para caso haja duvidas
