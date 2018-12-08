@@ -1,23 +1,24 @@
 #include "uno.h"
 
 // embaralha as cartas
-void shuffle(struct Pilha *baralho)
+void embaralha(struct Pilha *baralho)
 {
-  size_t i;
-  if (baralho->topo > 1) 
-  {
-    for (i = 0; i <= baralho->topo - 1; i++) 
+    srand(time(NULL));
+    size_t i;
+    if (baralho->topo > 1) 
     {
-      size_t j = i + rand() / (RAND_MAX / (baralho->topo - i) + 1);
-      struct Carta t = baralho->cartas[j];
-      baralho->cartas[j] = baralho->cartas[i];
-      baralho->cartas[i] = t;
+        for (i = 0; i <= baralho->topo - 1; i++) 
+        {
+        size_t j = i + rand() / (RAND_MAX / (baralho->topo - i) + 1);
+        struct Carta t = baralho->cartas[j];
+        baralho->cartas[j] = baralho->cartas[i];
+        baralho->cartas[i] = t;
+        }
     }
-  }
 }
 
 
-void gera_deck(struct Pilha *baralho)
+void gera_cartas(struct Pilha *baralho)
 {
 	int i, j;
 	baralho->topo = 0;
@@ -27,56 +28,44 @@ void gera_deck(struct Pilha *baralho)
         for (j = 0; j < 4; j++)
         {
             struct Carta nova = {i + '0', cores[j]};
-            baralho->cartas[baralho->topo] = nova;
-            ++(baralho->topo);
-
+            baralho->cartas[baralho->topo++] = nova;
             if(i > 0)
-            {
-                baralho->cartas[baralho->topo] = nova;
-            	++(baralho->topo);  
-            }
+                baralho->cartas[baralho->topo++] = nova;
         }
     //Gera as cartas de ação
     for (i = 0; i < 3; i++)
         for (j = 0; j < 4; j++)
         {
             struct Carta nova = {especiais[i], cores[j]};
-            baralho->cartas[baralho->topo] = nova;
-            ++(baralho->topo);  
-            
-            baralho->cartas[baralho->topo] = nova;
-            ++(baralho->topo);
+            baralho->cartas[baralho->topo++] = nova;
+            baralho->cartas[baralho->topo++] = nova;
         }
     //Gera as cartas coringa e coringa +4
     for (i = 0; i < 4; i++)
     {
         struct Carta coringa4 = {'4', 'C'}, coringa0 = {'0', 'C'};
-
-        baralho->cartas[baralho->topo] = coringa4;
-        ++(baralho->topo);
-   
-        baralho->cartas[baralho->topo] = coringa0;
-        ++(baralho->topo);
+        baralho->cartas[baralho->topo++] = coringa4;
+        baralho->cartas[baralho->topo++] = coringa0;
     }
 }
 
 
-void mostra_deck(struct Pilha *baralho)
+void mostra_cartas(struct Carta cartas[], int t)
 {
     int i;
-    for (i = 1; i <= baralho->topo; i++)
+    for (i = 1; i <= t; i++)
     {
-        printf("(%c - %c [%02d])\t", baralho->cartas[i-1].cor, baralho->cartas[i-1].valor, i-1);
-        if(i % 3 == 0)
+        printf("(%c - %c [%02d])\t", cartas[i-1].cor, cartas[i-1].valor, i-1);
+        if(i % 4 == 0)
             printf("\n\n");
     }
 }
 
 
-int distribui_cartas(struct Carta baralho[], int topo, struct Jogador jogadores[], int n_jogadores)
+void distribui_cartas(struct Pilha *baralho, struct Jogador jogadores[], int n_jogadores)
 {
 	int i, j;
-	if(n_jogadores < 2 || n_jogadores > 10)
+    if(n_jogadores < 2 || n_jogadores > 10)
     {
         printf("Numero invalido de jogadores !!!!");
         exit(EXIT_FAILURE);
@@ -91,10 +80,8 @@ int distribui_cartas(struct Carta baralho[], int topo, struct Jogador jogadores[
 	for(i = 0; i < 7; i++)
 		for(j = 0; j < n_jogadores; j++)
 		{
-			jogadores[j].mao[jogadores[j].n_cartas++] = baralho[topo--];
-		}
-
-	return topo;
+            jogadores[j].mao[(jogadores[j].n_cartas)++] = baralho->cartas[--(baralho->topo)];
+        }
 }
 
 
@@ -159,23 +146,3 @@ int verificarseestacheia (struct Pilha *Pilha){
 
 }
 // desempilha a pilha do jogo se ela estiver cheia
-
-float desempilhar (struct Pilha *Pilha, int topo){
-  float aux = Pilha-> topo-1;
-  Pilha->topo--;
-  return topo;
- }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
