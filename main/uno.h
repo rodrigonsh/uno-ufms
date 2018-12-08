@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <time.h>
 
 //Definição da estrutura que representa uma carta
 struct Carta
@@ -25,15 +26,14 @@ struct Pilha
 	struct Carta cartas[108];
 };
 
-
 //Embaralha o deck de cartas
-void shuffle(struct Pilha *baralho);
+void embaralha(struct Pilha *baralho);
 
 // Aqui rola uma geração de deck com todas as cartas
-void gera_deck(struct Pilha *baralho);
+void gera_cartas(struct Pilha *baralho);
 
 // Aqui mostra todo o deck
-void mostra_deck(struct Pilha *baralho);
+void mostra_cartas(struct Carta cartas[], int t);
 
 //distribui as cartas
 void distribui_cartas(struct Pilha *baralho, struct Jogador jogadores[], int n_jogadores); 
@@ -52,12 +52,12 @@ int compra(struct Jogador *jogador, struct Carta baralho[], int topo, int quant)
 
 
 //verificar se a pilha da jogo esta cheia
-int verificarseestacheia(struct Pilha*p);
+int verificarseestacheia(struct Pilha *p);
 
 // Se a carta do jogo estiver cheia,desempilha
 void desempilhar(struct Pilha *p);
 
 //Verifica se o jogador tem um carta x
-int verifica(struct Jogador jogador, struct Carta x);
+int verifica_carta(struct Jogador jogador, struct Carta x);
  
 #endif
