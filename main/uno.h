@@ -26,6 +26,9 @@ struct Pilha
 	struct Carta cartas[108];
 };
 
+//imprime linhas
+void show_line(char msg[], int times);
+
 //Embaralha o deck de cartas
 void embaralha(struct Pilha *baralho);
 
@@ -48,16 +51,9 @@ struct Carta joga_carta(struct Jogador *jogador, int index);
 int verifica(struct Carta jogada, struct Carta pilha);
 
 //compra cartas
-int compra(struct Jogador *jogador, struct Carta baralho[], int topo, int quant);
+void compra(struct Jogador *jogador, struct Pilha *baralho, int quant);
 
+//recebe o jogadores para comecar o jogo
+int set_players(struct Jogador jogadores[]);
 
-//verificar se a pilha da jogo esta cheia
-int verificarseestacheia(struct Pilha *p);
-
-// Se a carta do jogo estiver cheia,desempilha
-void desempilhar(struct Pilha *p);
-
-//Verifica se o jogador tem um carta x
-int verifica_carta(struct Jogador jogador, struct Carta x);
- 
 #endif
