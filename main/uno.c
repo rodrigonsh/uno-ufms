@@ -1,6 +1,16 @@
 #include "uno.h"
 
-// embaralha as cartas
+
+void show_line(char msg[], int times)
+{
+    int i;
+    printf("\n");
+    for (i = 0; i < times; i++)
+        printf("%s", msg);
+    printf("\n");
+}
+
+
 void embaralha(struct Pilha *baralho)
 {
     srand(time(NULL));
@@ -126,23 +136,60 @@ int verifica(struct Carta jogada, struct Carta pilha)
 }
 
 
-int compra(struct Jogador *jogador, struct Carta baralho[], int topo, int quant)
+void compra(struct Jogador *jogador, struct Pilha *baralho, int quant)
 {
 	int i;
 	for(i = 0; i < quant; i++)
 	{
-		jogador->mao[jogador->n_cartas++] = baralho[topo--];
+		jogador->mao[jogador->n_cartas++] = baralho->cartas[--baralho->topo];
 	}
-	return topo;
 }
 
-//verifica se a pilha d jogo esta cheia
-int verificarseestacheia (struct Pilha *Pilha){
 
-  if (Pilha->topo == Pilha-> topo-1)
-     return 1;
-  else
-     return 0;
-
+int set_players(struct Jogador jogadores[])
+{
+    char op = 's';
+    int i = 0, n_jogadores = 0;
+    show_line("=-", 40);
+    printf("CADASTRAR JOGADORES");
+    show_line("-=", 40);
+    for (i = 0; i < 10; i++)
+    {
+        if(n_jogadores >= 2)
+            while(1)
+            {
+                printf("\nDeseja continuar ?(s/n)\n");
+                scanf("%c", &op);
+                if(op == 's' || op == 'n')
+                    break;
+                else
+                    printf("\nOpcao Invalida !!!!\n");
+            }
+        if(op == 's')
+        {
+            show_line("-=", 40);
+            printf("Apelido jogador [%d]>> ", n_jogadores+1);
+            scanf(" %[^\n]s", &jogadores[i].nick_name);
+            fflush(stdin);
+            n_jogadores++;
+            show_line("-=", 40);
+        }
+        else
+            break;
+    }
+    return n_jogadores;
 }
-// desempilha a pilha do jogo se ela estiver cheia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
