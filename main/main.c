@@ -8,13 +8,15 @@ struct Jogador jogadores[10];
 int main(int argc, char const *argv[])
 {
 	int i;
-	n_jogadores = 2;
 	gera_cartas(&baralho);
 	embaralha(&baralho);
-	distribui_cartas(&baralho ,jogadores, n_jogadores);
+	n_jogadores = set_players(jogadores);
+	distribui_cartas(&baralho,jogadores, n_jogadores);
 	for (i = 0; i < n_jogadores; i++)
 	{
-		printf("\njogador %d\n", i + 1);
+		show_line("::", 40);
+		printf("(n %d)%s", jogadores[i].ind_jogador, jogadores[i].nick_name);
+		show_line("::", 40);
 		mostra_cartas(jogadores[i].mao, jogadores[i].n_cartas);
 	}
 	return 0;
